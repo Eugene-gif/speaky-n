@@ -1,0 +1,332 @@
+.main {
+  &__list {
+    display: grid;
+    grid-template-areas:
+      "level level level level time time time influence influence"
+      "level level level level regular regular neurons neurons neurons"
+      "level level level level intensive intensive neurons neurons neurons";
+    height: 795px;
+    gap: 24px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f0f4ff;
+    justify-content: space-between;
+    border-radius: 24px;
+    color: var(--default);
+
+    &__title {
+      font-weight: 400;
+      line-height: 24px;
+      font-size: 20px;
+    }
+
+    &__score {
+      font-size: 72px;
+      line-height: 1.1;
+      font-weight: 200;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 28px;
+    }
+  }
+
+  .level {
+    grid-area: level;
+    width: 518px;
+    height: 795px;
+    width: 100%;
+    padding-bottom: 80px;
+
+    &__circle {
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      border: 12px solid #cce4ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: inset 0 0 15px 0px #00000070;
+      background-color: #e4ecff;
+    }
+
+    &__title {
+      @extend .card__title;
+    }
+
+    &__score {
+      font-size: 120px;
+      line-height: 1.1;
+      font-weight: 200;
+    }
+
+    &__belt {
+      width: 230px;
+      height: 5px;
+      background-color: #ed7534;
+    }
+
+    &__subtitle {
+      @extend .card__subtitle;
+      font-size: 32px;
+    }
+  }
+
+  .time {
+    grid-area: time;
+    justify-content: flex-start;
+    width: 517px;
+    height: 262px;
+    gap: 30px;
+
+    &__title {
+      @extend .card__title;
+    }
+
+    &__box {
+      display: flex;
+      gap: 5px;
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .separator {
+      @extend .time__value;
+      align-self: flex-start;
+    }
+
+    &__value {
+      font-size: 72px;
+      line-height: 1.1;
+      font-weight: 200;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 100;
+    }
+
+    .--bold {
+      margin-right: 30px;
+
+      .time__value,
+      .time__text {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .influence {
+    grid-area: influence;
+    width: 247px;
+    height: 262px;
+    padding: 40px 35px;
+    justify-content: start;
+    gap: 40px;
+
+    &__title {
+      @extend .card__title;
+    }
+
+    &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__value {
+      font-size: 60px;
+      line-height: 1.1;
+      font-weight: 200;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 100;
+      text-align: center;
+    }
+
+    .separator {
+      @extend .influence__value;
+      align-self: flex-start;
+    }
+  }
+
+  .regular {
+    grid-area: regular;
+    width: 382px;
+    height: 242px;
+  }
+
+  .intensive {
+    grid-area: intensive;
+    width: 382px;
+    height: 242px;
+  }
+
+  .neurons {
+    grid-area: neurons;
+    padding-bottom: 80px;
+    width: 382px;
+    height: 508px;
+    justify-content: space-between;
+    gap: 30px;
+
+    &__title {
+      @extend .card__title;
+    }
+
+    &__icon {
+      height: 120px;
+    }
+
+    &__score {
+      @extend .card__score;
+    }
+
+    &__btn {
+      margin-top: auto;
+      align-self: stretch;
+      min-height: 55px;
+    }
+  }
+
+  // _____ Media queries _____
+  @media(max-width: 1368px) {
+    &__list {
+      height: auto;
+      grid-template-areas:
+        "level influence"
+        "level regular"
+        "level intensive"
+        "time time"
+        "neurons neurons"
+      ;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media(max-width: 968px) {
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      gap: 20px;
+      padding: 40px 20px;
+
+      &__score {
+        font-size: 56px;
+      }
+
+      &__subtitle {
+        font-size: 20px;
+      }
+    }
+
+    .level {
+      order: -2;
+      padding-bottom: 40px;
+      gap: 25px;
+
+      &__circle {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 250px;
+        min-width: 250px;
+      }
+
+      &__score {
+        font-size: 64px;
+      }
+
+      &__title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .neurons {
+      order: -1;
+
+      &__icon {
+        height: 80px;
+      }
+
+      &__score {
+        font-size: 64px;
+      }
+    }
+
+    .time {
+      gap: 24px;
+
+      &__block {
+        gap: 10px;
+      }
+
+      &__value {
+        font-size: 50px;
+      }
+
+      .--bold {
+        margin-right: 15px;
+      }
+    }
+
+    .influence {
+      gap: 24px;
+
+      &__block {
+        gap: 10px;
+      }
+
+      &__value {
+        font-size: 50px;
+      }
+    }
+  }
+
+  @media(max-width: 368px) {
+    .level {
+      &__circle {
+        height: 200px;
+        width: 200px;
+      }
+    }
+
+    .time {
+      &__value {
+        font-size: 42px;
+      }
+    }
+  }
+}
