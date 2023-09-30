@@ -12,7 +12,7 @@
   const desktop = window.matchMedia("(min-width: 768px)");
   const mobile = window.matchMedia("(max-width: 768px)");
   // Почта
-  const email = ref("olivertwist89@gmail.com");
+  const email = ref("test@gmail.com");
   // Счет в нейронах
   const score = ref(25567);
 </script>
