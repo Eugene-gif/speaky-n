@@ -1,9 +1,3 @@
-<!-- <script>
-  export default {
-    name: "IconExit",
-  };
-</script> -->
-
 <template>
   <div>
     <svg

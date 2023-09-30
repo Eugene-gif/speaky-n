@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Main from "@/pages/Main/Main.vue";
 import Shop from "@/pages/Shop/Shop.vue";
-
-const url = '/speaky-n'
+import ShopItem from "@/pages/ShopItem/ShopItem.vue";
 
 const routes = [
   {
@@ -12,7 +11,12 @@ const routes = [
   },
   {
     path: '/shop',
-    component: Shop
+    component: Shop,
+  },
+  {
+    name: 'ShopItem',
+    path: '/shop/:id',
+    component: ShopItem,
   },
 ]
 

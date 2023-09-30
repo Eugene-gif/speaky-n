@@ -1,5 +1,4 @@
 <script setup>
-  import { ref } from "vue";
   import IconNeuron from "@/assets/icons/IconNeuron.vue";
 </script>
 

@@ -9,6 +9,10 @@
 
   &__item {
     width: auto;
+
+    @media(hover: hover) {
+      cursor: pointer;
+    }
   }
 
   // _____ Media queries _____
