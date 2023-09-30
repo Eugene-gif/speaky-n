@@ -1,4 +1,4 @@
-# [Speaky Ninja](https://v3.ru.vuejs.org/)
+# [Speaky Ninja](https://eugene-gif.github.io/speaky-n/)
 
 ## Project setup
 ```
