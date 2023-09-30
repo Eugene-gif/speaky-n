@@ -67,7 +67,6 @@
     }
 
     &__btn {
-      // min-height: 55px;
       margin-top: auto;
     }
   }
